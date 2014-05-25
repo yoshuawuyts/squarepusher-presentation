@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+    <section class="stack" data-id="c344331591947ff2fe5a4a6cb0b5ad13">
+        <section class="" data-id="7a4ad6a1966c857b27ce2aeafb1c2589">
+            <h1>SQUAREPUSHER</h1>
+<div>The story of a tile placing algorithm</div>
+<div>
+            <br>
+        </div>
+    </section>
+    <section class="" data-id="cbfb2bc7fafc13c6387bb0ec6d67278e">
+        <h2>Overzicht</h2>
+<div>
+        <ol>
+<li>
+<span>Inleiding</span>
+        <br>
+</li>
+<li>
+<span>Methoden</span>
+        <br>
+</li>
+<li>
+<span>Resultaten</span>
+        <br>
+</li>
+<li>
+<span>Discussie</span>
+        <br>
+</li>
+</ol>
+    </div>
+</section>
+<section class="" data-id="80639598128bf88c017874e313310101">
+    <h2>
+        <br>
+    </h2>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<div style="max-height: none; max-width: none;">
+<span>
+    <br>
+</span>
+</div>
+<div class="absolute-element" style="position: absolute; width: 299px; height: 138px; z-index: 4; left: 671px; top: 438px;">
+<li style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; text-align: left;">20 Tegels<br>
+</li>
+<li style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; text-align: left;">Met 20 rotaties<br>
+</li>
+<li style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; text-align: left;">Geen duplicatie</li>
+</div>
+<div class="absolute-element" style="position: absolute; width: 296.2031706299541px; height: 138px; z-index: 4; left: 369px; top: 439px; max-height: none; max-width: none;">
+<li style="text-align: left; font-size: 36.503963470458984px; font-style: normal; font-variant: normal;">15 Tegels<br>
+</li>
+<li style="text-align: left; font-size: 36.503963470458984px; font-style: normal; font-variant: normal;">Met 4 rotaties<br>
+</li>
+<li style="text-align: left; font-size: 36.503963470458984px; font-style: normal; font-variant: normal;">Met 1 &nbsp;duplicatie</li>
+</div>
+<div class="absolute-element" style="position: absolute; width: 264px; height: 138px; z-index: 4; left: 31px; top: 441px;">
+<ul>
+<li>
+<span style="text-align: center;">14 Tegels</span>
+<br>
+</li>
+<li>
+<span style="text-align: center;">Geen rotatie</span>
+<br>
+</li>
+<li>
+<span style="text-align: center;">Met duplicatie</span>
+<br>
+</li>
+</ul>
+</div>
+<div class="absolute-element" style="position: absolute; width: 10px; height: 46px; z-index: 4; left: 145px; top: 494px;">
+<span>
+    <br>
+</span>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 671px; top: 385px;">
+<span>
+    <b>Probleem 3</b>
+</span>
+</div>
+<div class="absolute-element" style="position: absolute; width: 263.40634125990823px; height: 46px; z-index: 4; left: 30px; top: 384px; max-height: none; max-width: none;">
+<span>
+    <b>Probleem 1</b>
+</span>
+</div>
+<div>
+<span>
+    <br>
+</span>
+</div>
+<div>
+<span>&nbsp;&nbsp;&nbsp;</span>
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 188.08594075928244px; height: 46px; z-index: 4; left: 368px; top: 383px; max-height: none; max-width: none;">
+<b>Probleem 2</b>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<div class="absolute-element" style="position: absolute; width: 185px; height: 46px; z-index: 4; left: 402px; top: 383px;">
+<br>
+</div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/ranj/images/423395/Tegelset1.jpg" style="width: 307px; height: 234px; max-height: none; max-width: none; position: absolute; z-index: 4; left: 13px; top: 109px;" class="absolute-element">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/ranj/images/423407/588px-Tegelset2.jpg" style="width: 230px; height: 236px; max-height: none; max-width: none; position: absolute; z-index: 4; left: 369px; top: 109px;" class="absolute-element">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/ranj/images/423405/651px-Tegelset3.jpg" style="width: 254px; height: 235px; max-height: none; max-width: none; position: absolute; z-index: 4; left: 649px; top: 110px;" class="absolute-element">
+</section>
+<section class="" data-id="2942a316036927dbe11b44563de3cd5d">
+    <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/ranj/images/423453/Picture1.png">
+    <br>
+</h2>
+</section>
+</section>
+<section class="" data-id="d4b62b1ae5a1fe1c15e1b780041cdd86">
+    <h2>METHODE</h2>
+<div class="absolute-element" style="position: absolute; width: 691.3320817688777px; height: 92px; z-index: 4; left: 132px; top: 489px; max-height: none; max-width: none;">
+    <ul>
+<li style="text-align: left;">Sorteer tegels op oppervlakte.</li>
+<li style="text-align: left;">Plaats tegels van rechtsboven naar linksonder.</li>
+<li style="text-align: center;">Als een tegel niet past, probeer een kleinere.</li>
+</ul>
+</div>
+<h2 style="text-align: center;">
+<br>
+</h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/ranj/images/423479/Presentation2_copy.jpg" style="width: 660px; height: 371px; max-height: none; max-width: none; position: absolute; z-index: 4; left: 131px; top: 89px;" class="absolute-element">
+</section>
+<section class="stack" data-id="528c49aeb5386110f114a83671734069">
+    <section class="" data-id="c898e4a10c4d09989c3fc963b660b717">
+        <h2>Resultaten</h2>
+<div class="absolute-element" style="position: absolute; width: 184px; height: 46px; z-index: 4; left: 470px; top: 208px;">
+        <b>Probleem 1</b>
+    </div>
+
+<div class="absolute-element" style="position: absolute; width: 352.1172298706717px; height: 46px; z-index: 4; left: 470px; top: 256px; max-height: none; max-width: none;">
+    <ul>
+<li>
+<span style="text-align: center;">Opgelost in: <font style="font-size: 32px;">27ms</font>
+</span>
+<br>
+</li>
+<li>
+<span style="text-align: center;">State space: 480 000</span>
+<br>
+</li>
+</ul>
+</div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/ranj/images/423492/problemset_1.png" class="absolute-element" style="position: absolute; max-height: none; max-width: none; width: 787.8039471641209px; height: 554.5619526816548px; z-index: 4; left: -174px; top: 111px;">
+</section>
+<section class="" data-id="0f6a7a2a2c9b8cd8e5aa3e464947d114">
+    <h2>
+<span style="font-size: 75.96px;">RESULTATEN</span>
+    <br>
+</h2>
+<div>
+<div class="absolute-element" style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; position: absolute; width: 184px; height: 46px; z-index: 4; left: 470px; top: 208px;">
+    <b>Probleem 2</b>
+</div>
+<div class="absolute-element" style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; position: absolute; width: 352.1172298706717px; height: 46px; z-index: 4; left: 470px; top: 256px; max-height: none; max-width: none;">
+<ul>
+<li>
+<span style="text-align: center;">Opgelost in:&nbsp;<font style="font-size: 32px;">3.7s &nbsp; &nbsp;</font>
+</span>
+<br>
+</li>
+<li>
+<span style="text-align: center;">State space: 1.4e+12</span>
+<br>
+</li>
+</ul>
+</div>
+<h2 style="font-style: normal; font-variant: normal;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/ranj/images/423505/problemset_2.png" class="absolute-element" style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; max-width: none; max-height: none; text-transform: none; position: absolute; width: 738.5694620683882px; height: 520.4826063149665px; z-index: 4; left: -199px; top: 106px;">
+</h2>
+</div>
+</section>
+<section class="" data-id="af490422c6a69b1459d8065c2cbc5916">
+    <h1 style="position: absolute; width: 292px; height: 68px; z-index: 4; left: 51px; top: 210px;" class="absolute-element">
+        <span>
+            <font style="font-size: 112px;">?</font>
+        </span>
+    </h1>
+<div>
+    <div style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal;">
+<div class="absolute-element" style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; position: absolute; width: 184px; height: 46px; z-index: 6; left: 470px; top: 208px;">
+    <b>Probleem 3</b>
+</div>
+<div class="absolute-element" style="font-size: 36.503963470458984px; font-style: normal; font-variant: normal; position: absolute; width: 352.1172298706717px; height: 46px; z-index: 7; left: 470px; top: 256px; max-height: none; max-width: none;">
+<ul>
+<li>
+<span style="text-align: center;">Op te lossen in: 261000 jaar<font style="font-size: 32px;">&nbsp; &nbsp;</font>
+</span>
+<br>
+</li>
+<li>
+<span style="text-align: center;">State space: 2.6e+24</span>
+<br>
+</li>
+</ul>
+</div>
+<h2 style="font-style: normal; font-variant: normal;">
+<span style="font-size: 75.96px;">RESULTATEN</span>
+</h2>
+</div>
+</div>
+</section>
+</section>
+<section class="stack" data-id="fd4234978d2790d81fd48b236c210988">
+    <section class="" data-id="9d619b3fa8706d0cbb3069bf2db935b9">
+        <h2>Discussie</h2>
+<div>
+        <b>Verbeteringen op het algoritme</b>
+    </div>
+<div>
+    <b>
+    <br>
+</b>
+</div>
+<div>
+<ul>
+<li>Parallele computatie</li>
+<li>Betere memory management</li>
+<li>Bitwise shifts gebruiken</li>
+</ul>
+</div>
+</section>
+<section class="" data-id="2d944680c50c8ab595d82349461f0d3e">
+    <h2>Discussie</h2>
+<div>Mogelijk betere heuristieken</div>
+<div>
+    <br>
+</div>
+<div>
+<ul>
+<li>
+<span style="text-align: center;">Onmogelijke paden niet inslaan</span>
+<br>
+</li>
+<li>
+<span style="text-align: center;">A* / hillclimber algoritmes</span>
+<br>
+</li>
+<li>
+<span style="text-align: center;">Precomputed borden voor kleinere state space</span>
+<br>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</div>
+
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
